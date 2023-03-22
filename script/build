@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+npm install
+node_modules/.bin/pkg copilot.vim/copilot/dist/agent.js -t node16-macos-x64,node16-macos-arm64
+
+rm -rf bin
+mkdir bin
+mv agent-arm64 bin/copilot-darwin-aarch64
+mv agent-x64 bin/copilot-darwin-x86_64
+
+gzip bin/copilot-darwin-aarch64
+gzip bin/copilot-darwin-x86_64
