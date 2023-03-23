@@ -1,4 +1,18 @@
 {
+    "assets": [
+        "copilot.vim/copilot/dist/tokenizer_cushman001.json",
+        "copilot.vim/copilot/dist/tokenizer_cushman002.json",
+        "copilot.vim/copilot/dist/vocab_cushman001.bpe",
+        "copilot.vim/copilot/dist/vocab_cushman002.bpe",
+        "copilot.vim/copilot/dist/tree-sitter-go.wasm",
+        "copilot.vim/copilot/dist/tree-sitter-javascript.wasm",
+        "copilot.vim/copilot/dist/tree-sitter-python.wasm",
+        "copilot.vim/copilot/dist/tree-sitter-ruby.wasm",
+        "copilot.vim/copilot/dist/tree-sitter-typescript.wasm",
+        "copilot.vim/copilot/dist/tree-sitter.wasm"
+    ],
+    "bin": "copilot.vim/copilot/dist/agent.js",
+    "name": "copilot",
     "devDependencies": {
         "pkg": "^5.8.0"
     }
