@@ -2,13 +2,6 @@
 
 set -e
 
-npm install
-node_modules/.bin/pkg . -t node16-macos-x64,node16-macos-arm64
-
-rm -rf bin
-mkdir bin
-mv copilot-arm64 bin/copilot-darwin-aarch64
-mv copilot-x64 bin/copilot-darwin-x86_64
-
-gzip bin/copilot-darwin-aarch64
-gzip bin/copilot-darwin-x86_64
+rm -rf dist
+mkdir dist
+tar -czf dist/copilot.tar.gz -C copilot.vim/copilot/dist .

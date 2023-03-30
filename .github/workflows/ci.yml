@@ -31,27 +31,21 @@ jobs:
           clean: false
           submodules: 'recursive'
 
-      - name: Create binaries
+      - name: Create tarball
         run: script/build
 
-      - name: Upload aarch64 binaries to workflow run if main branch
+      - name: Upload tarball to workflow run if main branch
         uses: actions/upload-artifact@v2
         with:
-          name: copilot-darwin-aarch64.gz
-          path: bin/copilot-darwin-aarch64.gz
-
-      - name: Upload x86_64 binaries to workflow run if main branch
-        uses: actions/upload-artifact@v2
-        with:
-          name: copilot-darwin-x86_64.gz
-          path: bin/copilot-darwin-x86_64.gz
+          name: copilot.tar.gz
+          path: dist/copilot.tar.gz
 
       - uses: softprops/action-gh-release@v1
         name: Upload binaries to release if release tag
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         with:
           draft: true
-          files: bin/*
+          files: dist/*
           overwrite: true
           body: ""
         env:
