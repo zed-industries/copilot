@@ -13,12 +13,7 @@ on:
 jobs:
   build:
     name: Build binary
-    runs-on:
-      - self-hosted
-      - bundle
-    env:
-      MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
-      MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+    runs-on: buildjet-8vcpu-ubuntu-2204
     steps:
       - name: Install Node
         uses: actions/setup-node@v2
